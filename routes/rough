@@ -1,0 +1,49 @@
+const z=[
+    {name:"B27 Weekend"},
+    {name:"B27 Weekday"},
+     {name:"B26 Weekend"},
+    {name:"B26 Weekday"},
+     {name:"B25 Weekend"},
+    {name:"B25 Weekday"},
+]
+const abc=[
+   
+     {
+    id:"101",
+    fullname:"Kausalya",
+    img:"https://clipground.com/images/clipart-profile-15.jpg",
+    mobile:123456778,
+    email:"Madhu@gmail.com",
+    jobtype:"Fulltime",
+    dob:"25-02-1997",
+    location:"chennai"
+    },
+    {
+        id:"102",
+        fullname:"Madhumitha",
+    img:"https://clipground.com/images/clipart-profile-15.jpg",
+    mobile:123456778,
+    email:"Madhu@gmail.com",
+    jobtype:"Fulltime",
+    dob:"25-02-1997",
+    location:"chennai"
+    },
+    {
+        id:"103",fullname:"govathini",
+    img:"https://clipground.com/images/clipart-profile-15.jpg",
+    mobile:"123456778",
+    email:"govarthini@gmail.com",
+    jobtype:"Fulltime",
+    dob:"25-02-1997",
+    location:"chennai"
+    },
+    {id:"104",
+    fullname:"Suba",
+    img:"https://clipground.com/images/clipart-profile-15.jpg",
+    mobile:"123456778",
+    email:"Suba@gmail.com",
+    jobtype:"Fulltime",
+    dob:"25-02-1997",
+    location:"chennai"
+    }
+]
