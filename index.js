@@ -2,14 +2,15 @@ import express from 'express'
 import { response } from 'express';
 import mongo from './mongo.js';
 import employeeRoute from './routes/employee.route.js';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv/config'
 import cors from 'cors'
-dotenv.config();
-(async()=>{ 
 
+(async()=>{ 
     try{
+        dotenv.config();
 const app=express();
 //const PORT=9001;
+const PORT=process.env.PORT
 //middleware
 app.use(express.json());
 
@@ -23,9 +24,10 @@ response.send("Hello employees")
 })
 
 app.use("/employee", employeeRoute)
-app.listen(process.env.PORT,()=>console.log(`mongo db connected port ${process.env.PORT}`))
+app.listen(PORT,()=>console.log(`mongo db connected port ${PORT}`))
     }
     catch(err){
+        
 console.error("error starting")
     }
 })();

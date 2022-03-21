@@ -6,10 +6,10 @@ const service={
         try{
             const data=await db.employee.find().toArray();
             console.log("employee fetched")
-            response.json(data);
+            response.json({status:"success",data});
                 }catch(err){
                     console.log(" error in employee fetching")
-                    response.send(err)
+                    response.json({status:"error",err})
                 }
     },
     async addEmployee(request,response){
@@ -21,7 +21,7 @@ const service={
             console.log("employee added")
                 }catch(err){
                     console.log("error in employee inserted")
-                    response.send(err);
+                    response.json(err);
                 }
     },
     async updateEmployee(request,response){
@@ -32,8 +32,8 @@ const service={
             const {value}=await db.employee
             .findOneAndUpdate(
                 {_id:ObjectId(request.params.id)},
-                {$set:{...request.body}});
-                //{returnDocument:"after"});
+                {$set:{...request.body}},
+                {returnDocument:"after"});
                //new version mongodb {returnNewDocument:"true"}
                console.log("employee edited",request.params.id,request.body)
             response.json({status:"success",data:value});

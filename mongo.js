@@ -1,24 +1,25 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv'
+dotenv.config();
 //mongo connection
 //const MONGO_URL="mongodb://localhost:27017";
 //const MONGO_DBNAME="employeedatabase";
 
+const MONGO_URL=process.env.MONGO_URL;
+const MONGO_DBNAME=process.env.MONGO_DBNAME
 const mongo={
 db:null,
 employee:null,
-consultancy:null,
-parttime:null,
+
 async connect(){
     
-    const client=new MongoClient(process.env.MONGO_URL);
+    const client=new MongoClient(MONGO_URL);
     await client.connect();
-    console.log(`mongodb connected to ${process.env.MONGO_URL}`);
+    console.log(`mongodb connected to ${MONGO_URL}`);
    
-    this.db=client.db(process.env.MONGO_DBNAME);
-    console.log(`MongoDb selected to ${process.env.MONGO_DBNAME}`)
-    this.employee=this.db.collection("employee");
-    this.consultancy=this.db.collection("consultancy");
-    this.parttime=this.db.collection("parttime");
+    this.db=client.db(MONGO_DBNAME);
+    console.log(`MongoDb selected to ${MONGO_DBNAME}`)
+    
     console.log("mongodb collections");
 },
 }
