@@ -7,6 +7,7 @@ dotenv.config();
 
 const MONGO_URL=process.env.MONGO_URL;
 const MONGO_DBNAME=process.env.MONGO_DBNAME
+
 const mongo={
 db:null,
 employee:null,
@@ -15,7 +16,7 @@ async connect(){
     
     const client=new MongoClient(MONGO_URL);
     await client.connect();
-    console.log(`mongodb connected to ${MONGO_URL}`);
+    console.log(`mongodb connected }`);
    
     this.db=client.db(MONGO_DBNAME);
     console.log(`MongoDb selected to ${MONGO_DBNAME}`)
