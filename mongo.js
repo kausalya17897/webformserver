@@ -20,7 +20,7 @@ async connect(){
    
     this.db=client.db(MONGO_DBNAME);
     console.log(`MongoDb selected to ${MONGO_DBNAME}`)
-    this.details = this.db.collection("employee");
+    this.employee = this.db.collection("employee");
     
     console.log("mongodb collections");
 },
