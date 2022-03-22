@@ -7,7 +7,7 @@ import cors from 'cors'
 
 (async()=>{ 
     try{
-        dotenv.config();
+dotenv.config();
 const app=express();
 //const PORT=9001;
 const PORT=process.env.PORT

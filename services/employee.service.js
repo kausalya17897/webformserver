@@ -1,6 +1,6 @@
 import db from '../mongo.js';
 import { ObjectId } from 'mongodb';
-import { request } from 'express';
+
 const service={
    async getEmployee(request,response){
         try{
@@ -17,11 +17,11 @@ const service={
             const {insertedId:_id}=await db.employee
             .insertOne(request.body);
             console.log("employee inserted",_id,request.body)
-            response.json({status:"success",data:{_id, ...request.body}});
+            response.json({status:"success",data:{ _id, ...request.body}});
             console.log("employee added")
                 }catch(err){
                     console.log("error in employee inserted")
-                    response.json(err);
+                    response.json({ status: "error", error: "Cannot insert employee" });
                 }
     },
     async updateEmployee(request,response){

@@ -16,10 +16,11 @@ async connect(){
     
     const client=new MongoClient(MONGO_URL);
     await client.connect();
-    console.log(`mongodb connected }`);
+    console.log(`mongodb connected `);
    
     this.db=client.db(MONGO_DBNAME);
     console.log(`MongoDb selected to ${MONGO_DBNAME}`)
+    this.details = this.db.collection("employee");
     
     console.log("mongodb collections");
 },
