@@ -9,7 +9,7 @@ const service={
             response.json({status:"success",data});
                 }catch(err){
                     console.log(" error in employee fetching")
-                    response.json({status:"error",err})
+                    response.json({status:"error",error:err})
                 }
     },
     async addEmployee(request,response){
@@ -18,7 +18,8 @@ const service={
             .insertOne(request.body);
             console.log("employee inserted",_id,request.body)
             response.json({status:"success",data:{ _id, ...request.body}});
-            console.log("employee added")
+        console.log("employee added")
+        console.log("log")
                 }catch(err){
                     console.log("error in employee inserted")
                     response.json({ status: "error", error: "Cannot insert employee" });
