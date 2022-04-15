@@ -4,10 +4,10 @@ import mongo from "./mongo.js";
 import employeeRoute from "./routes/employee.route.js";
 import dotenv from "dotenv";
 import cors from "cors";
-import multer from "multer";
 
 (async () => {
   try {
+    app.use(cors());
     dotenv.config();
     const app = express();
     //const PORT=9001;
@@ -15,7 +15,6 @@ import multer from "multer";
     //middleware
     app.use(express.json());
 
-    app.use(cors());
     //mongo connection
     await mongo.connect();
 
