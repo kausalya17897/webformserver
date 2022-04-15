@@ -19,6 +19,7 @@ const service={
             console.log("employee inserted",_id,request.body)
             response.json({status:"success",data:{ _id, ...request.body}});
         console.log("employee added")
+
         console.log("log")
                 }catch(err){
                     console.log("error in employee inserted")
@@ -27,7 +28,6 @@ const service={
     },
     async updateEmployee(request,response){
         try{
-
             //validation params and body
             //validation indb
             const {value}=await db.employee
