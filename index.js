@@ -7,12 +7,14 @@ import cors from "cors";
 
 (async () => {
   try {
+    const app = express();
     app.use(cors());
     dotenv.config();
-    const app = express();
+
     //const PORT=9001;
-    const PORT = process.env.PORT;
+    const PORT = process.env.PORT || 9001;
     //middleware
+
     app.use(express.json());
 
     //mongo connection
